@@ -51,7 +51,7 @@ public class Main extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 81, 127, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 127, -1));
 
         Dep.setText("Deposit");
         Dep.addActionListener(new java.awt.event.ActionListener() {
