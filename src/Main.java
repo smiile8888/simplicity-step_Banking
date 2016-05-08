@@ -37,7 +37,6 @@ public class Main extends javax.swing.JFrame {
         Tranfer = new javax.swing.JButton();
         Interest = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -93,11 +92,8 @@ public class Main extends javax.swing.JFrame {
         });
         getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 180, 150, -1));
 
-        jLabel2.setText("jLabel2");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 400, 210));
-
-        jTextField1.setText("Simplicity Banking edit by Unpun");
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, 220, -1));
+        jTextField1.setText("Simplicity Banking");
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, 220, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -190,7 +186,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton Withdraw;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton6;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
