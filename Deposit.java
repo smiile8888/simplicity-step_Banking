@@ -15,7 +15,7 @@ import javax.swing.JLabel;
 
 /**
  *
- * @author เมย์
+ * @author เมย�?
  */
 public class Deposit extends javax.swing.JFrame {
     private Object firstname;
@@ -59,7 +59,6 @@ public class Deposit extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
         jLabel1.setText("Deposit");
 
-        jLabel2.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         jLabel2.setText("Firstname");
 
         jLabel3.setText("Lastname");
@@ -129,7 +128,7 @@ public class Deposit extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jButton4))
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 38, Short.MAX_VALUE))
+                .addGap(0, 51, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -169,7 +168,7 @@ public class Deposit extends javax.swing.JFrame {
         //Connect to database
         CSDbDelegate db = new CSDbDelegate("cs14sitkmutt.me","3306","CSC105_G1","CSC105_G1","CSC105_G1");
         db.connect();
-        System.out.println(db.connect()); //เช็คว่าต่อกับDBสำเร็จมั้ย
+        System.out.println(db.connect()); //เ�?�?�?ว�?าต�?อ�?ั�?DBสำเร�?�?มั�?ย
 
 //insert 
 String sql = "INSERT INTO Deposit "
