@@ -9,7 +9,7 @@ import edu.sit.cs.db.CSDbDelegate;
 
 /**
  *
- * @author เมย์
+ * @author เมย�?
  */
 public class Name extends javax.swing.JFrame {
 
@@ -124,6 +124,7 @@ public class Name extends javax.swing.JFrame {
             }
         });
 
+        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel12.setText("Open Account");
 
         jButton3.setText("Clear");
@@ -186,12 +187,12 @@ public class Name extends javax.swing.JFrame {
                                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jTextField23, javax.swing.GroupLayout.PREFERRED_SIZE, 406, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(91, Short.MAX_VALUE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel24))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addGap(0, 493, Short.MAX_VALUE))))
             .addGroup(layout.createSequentialGroup()
                 .addGap(181, 181, 181)
                 .addComponent(OK)
@@ -228,7 +229,7 @@ public class Name extends javax.swing.JFrame {
                     .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(41, 41, 41)
+                        .addGap(18, 18, 18)
                         .addComponent(jLabel11))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
@@ -283,7 +284,7 @@ public class Name extends javax.swing.JFrame {
           //Connect to database
         CSDbDelegate db = new CSDbDelegate("cs14sitkmutt.me","3306","CSC105_G1","CSC105_G1","CSC105_G1");
         db.connect();
-        System.out.println(db.connect()); //เช็คว่าต่อกับDBสำเร็จมั้ย
+        System.out.println(db.connect()); //เ�?�?�?ว�?าต�?อ�?ั�?DBสำเร�?�?มั�?ย
 
 //insert 
 String sql = "INSERT INTO Account_customer "
