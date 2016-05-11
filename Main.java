@@ -9,7 +9,7 @@ import javafx.scene.paint.Color;
 
 /**
  *
- * @author เมย์
+ * @author เมย�?
  */
 public class Main extends javax.swing.JFrame {
 
@@ -37,14 +37,11 @@ public class Main extends javax.swing.JFrame {
         Tranfer = new javax.swing.JButton();
         Interest = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 11)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(153, 0, 204));
         jButton1.setText("Open Account");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -83,7 +80,7 @@ public class Main extends javax.swing.JFrame {
                 InterestActionPerformed(evt);
             }
         });
-        getContentPane().add(Interest, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 183, -1, -1));
+        getContentPane().add(Interest, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, -1, -1));
 
         jButton6.setText("Statement printout");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
@@ -91,13 +88,11 @@ public class Main extends javax.swing.JFrame {
                 jButton6ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 190, 150, -1));
+        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 180, 150, -1));
 
-        jLabel2.setText("jLabel2");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 400, 210));
-
-        jTextField1.setText("Simplicity Banking edit by Unpun");
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, 220, -1));
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel1.setText("Simplicity Banking");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 40, 170, 20));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -190,7 +185,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton Withdraw;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton6;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
