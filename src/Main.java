@@ -31,19 +31,19 @@ public class Main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         Dep = new javax.swing.JButton();
         Withdraw = new javax.swing.JButton();
         Tranfer = new javax.swing.JButton();
         Interest = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 11)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(153, 0, 204));
         jButton1.setText("Open Account");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -92,8 +92,13 @@ public class Main extends javax.swing.JFrame {
         });
         getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 180, 150, -1));
 
-        jTextField1.setText("Simplicity Banking");
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, 220, -1));
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel4.setText("Simplicity Banking");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 20, 170, 40));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fondo.jpg"))); // NOI18N
+        jLabel1.setToolTipText("");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 260));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -186,6 +191,8 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton Withdraw;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton6;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
