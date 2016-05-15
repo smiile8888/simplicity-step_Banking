@@ -38,6 +38,7 @@ public class Main extends javax.swing.JFrame {
         Interest = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -48,7 +49,7 @@ public class Main extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 127, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 127, -1));
 
         Dep.setText("Deposit");
         Dep.addActionListener(new java.awt.event.ActionListener() {
@@ -56,7 +57,7 @@ public class Main extends javax.swing.JFrame {
                 DepActionPerformed(evt);
             }
         });
-        getContentPane().add(Dep, new org.netbeans.lib.awtextra.AbsoluteConstraints(239, 81, 127, -1));
+        getContentPane().add(Dep, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 100, 127, -1));
 
         Withdraw.setText("Withdraw");
         Withdraw.addActionListener(new java.awt.event.ActionListener() {
@@ -64,7 +65,7 @@ public class Main extends javax.swing.JFrame {
                 WithdrawActionPerformed(evt);
             }
         });
-        getContentPane().add(Withdraw, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 131, 127, -1));
+        getContentPane().add(Withdraw, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 127, -1));
 
         Tranfer.setText("Tranfer");
         Tranfer.addActionListener(new java.awt.event.ActionListener() {
@@ -72,7 +73,7 @@ public class Main extends javax.swing.JFrame {
                 TranferActionPerformed(evt);
             }
         });
-        getContentPane().add(Tranfer, new org.netbeans.lib.awtextra.AbsoluteConstraints(239, 131, 127, -1));
+        getContentPane().add(Tranfer, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 150, 127, -1));
 
         Interest.setText("Interest Calculation");
         Interest.addActionListener(new java.awt.event.ActionListener() {
@@ -80,7 +81,7 @@ public class Main extends javax.swing.JFrame {
                 InterestActionPerformed(evt);
             }
         });
-        getContentPane().add(Interest, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, -1, -1));
+        getContentPane().add(Interest, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, -1, -1));
 
         jButton6.setText("Statement printout");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
@@ -88,11 +89,15 @@ public class Main extends javax.swing.JFrame {
                 jButton6ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 180, 150, -1));
+        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 200, 150, -1));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Simplicity Banking");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 40, 170, 20));
+
+        jPanel1.setBackground(new java.awt.Color(0, 0, 86));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 70));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -186,5 +191,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
