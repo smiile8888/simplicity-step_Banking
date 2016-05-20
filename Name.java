@@ -1,5 +1,5 @@
 
-import edu.sit.cs.db.CSDbDelegate;
+import database.AccountCustomer;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -9,9 +9,11 @@ import edu.sit.cs.db.CSDbDelegate;
 
 /**
  *
- * @author à¹€à¸¡à¸¢à¹?
+ * @author à¹€à¸¡à¸¢ï¿½?
  */
 public class Name extends javax.swing.JFrame {
+    
+    private AccountCustomer acc;
 
     /**
      * Creates new form Name
@@ -218,18 +220,22 @@ public class Name extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField18ActionPerformed
 
     private void OKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OKActionPerformed
-          //Connect to database
-        CSDbDelegate db = new CSDbDelegate("cs14sitkmutt.me","3306","CSC105_G1","CSC105_G1","CSC105_G1");
-        db.connect();
-        System.out.println(db.connect()); //à¹€à¸?à¹?à¸?à¸§à¹?à¸²à¸•à¹?à¸­à¸?à¸±à¸?DBà¸ªà¸³à¹€à¸£à¹?à¸?à¸¡à¸±à¹?à¸¢
+        //Connect to database
+        acc.connect();
 
-//insert 
-String sql = "INSERT INTO Account_customer "
-                    + "(Firstname, Surname, Title, Birthdate, Age, Address, Position, Company, Salary, Type) "
-                    + "VALUES('"+jTextField1.getText()+"','"+jTextField2.getText()+"',"
-                    + "'"+jTextField3.getText()+"', '"+jTextField5.getText()+"','"+jTextField8.getText()+"','"+jTextField23.getText()+"','"+jTextField18.getText()+"','"+jTextField19.getText()+"','"+jTextField20.getText()+"','"+jTextField6.getText()+"');";
-        boolean insertSuccess = db.executeQuery(sql);
-        System.out.println(insertSuccess);
+        // Insert new account 
+        String firstname = jTextField1.getText();
+        String surname = jTextField2.getText();
+        String title = jTextField3.getText();
+        String bd = jTextField5.getText();
+        String age = jTextField8.getText();
+        String add = jTextField23.getText();
+        String pos = jTextField18.getText();
+        String comp = jTextField19.getText();
+        String salary = jTextField20.getText();
+        String type = jTextField6.getText();
+        
+        acc.insert(firstname, surname, title, bd, age, add, pos, comp, salary, type);
     }//GEN-LAST:event_OKActionPerformed
 
     private void MainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MainActionPerformed
