@@ -3,6 +3,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+
 import database.HistoryLog;
 import database.AccountCustomer;
 
@@ -168,7 +169,7 @@ public class Deposit extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-       jTextField1.setText("");
+        jTextField1.setText("");
         jTextField2.setText("");
         jTextField5.setText("");
         jTextField6.setText("");
