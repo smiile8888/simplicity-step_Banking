@@ -147,7 +147,7 @@ public class Deposit extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // Connect to database
-        hisLog.connect();
+        //hisLog.connect();
 
         // Insert Transaction
         firstname = jTextField1.getText();
@@ -158,7 +158,7 @@ public class Deposit extends javax.swing.JFrame {
         hisLog.setData(firstname, lastname, accountID, amount);
         hisLog.insert(operation);
         
-        hisLog.disconnect();
+        //hisLog.disconnect();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -178,7 +178,7 @@ public class Deposit extends javax.swing.JFrame {
     
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
 
-        acc.connect();
+        //acc.connect();
         
         String accNo = jTextField6.getText();
         String msg = acc.select(accNo);
@@ -190,7 +190,7 @@ public class Deposit extends javax.swing.JFrame {
         popup.setVisible(true);
         setVisible(false);
         
-        acc.disconnect();
+        //acc.disconnect();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
