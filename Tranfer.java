@@ -1,10 +1,11 @@
-
-import edu.sit.cs.db.CSDbDelegate;
 import java.awt.Dimension;
 import java.util.ArrayList;
 import java.util.HashMap;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+
+import database.HistoryLog;
+import database.AccountCustomer;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -14,12 +15,21 @@ import javax.swing.JLabel;
 
 /**
  *
- * @author à¹€à¸¡à¸¢à¹?
+ * @author à¹€à¸¡à¸¢ï¿½?
  */
 public class Tranfer extends javax.swing.JFrame {
 
+    private HistoryLog hisLog;
+    private AccountCustomer acc;
+    
+    private String firstname;
+    private String lastname;
+    private String accountID;
+    private String amount;
+    private final String operation = "Transfer";
+
     /**
-     * Creates new form Tranfer
+     * Creates new form Transfer
      */
     public Tranfer() {
         initComponents();
@@ -129,19 +139,19 @@ public class Tranfer extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-          //Connect to database
-        CSDbDelegate db = new CSDbDelegate("cs14sitkmutt.me","3306","CSC105_G1","CSC105_G1","CSC105_G1");
-        //db.connect();
-        System.out.println(db.connect()); //à¹€à¸?à¹?à¸?à¸§à¹?à¸²à¸•à¹?à¸­à¸?à¸±à¸?DBà¸ªà¸³à¹€à¸£à¹?à¸?à¸¡à¸±à¹?à¸¢
+        // Connect to database
+        hisLog.connect();
 
-//insert 
-String sql = "INSERT INTO Tranfer "
-                    + "(Firstname, Lastname, AccountID, Amount) "
-                    + "VALUES('"+jTextField1.getText()+"','"+jTextField2.getText()+"',"
-                    + "'"+jTextField5.getText()+"', '"+jTextField7.getText()+"');";
-        boolean insertSuccess = db.executeQuery(sql);
-        System.out.println(insertSuccess);
-                             
+        // Insert Transaction
+        firstname = jTextField1.getText();
+        lastname = jTextField2.getText();
+        accountID = jTextField5.getText();
+        amount = jTextField7.getText();
+        
+        hisLog.setData(firstname, lastname, accountID, amount);
+        hisLog.insert(operation);
+        
+        hisLog.disconnect();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -159,28 +169,20 @@ String sql = "INSERT INTO Tranfer "
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
-        // TODO add your handling code here:
-       // TODO add your handling code here:
-         CSDbDelegate db = new CSDbDelegate("cs14sitkmutt.me","3306","CSC105_G1","CSC105_G1","CSC105_G1");
-        //db.connect();
-        System.out.println(db.connect());
-        String acc = jTextField5.getText();
-        String sql = "select * from Account_customer where AccountNumber = '"+acc+"'";
-        ArrayList<HashMap> ch = db.queryRows(sql);
-        String msg ="";
-        if(ch.size()==0)
-            msg += " Don't have this account ID ";
-        else
-            msg += " Have this account ID , this Account ID can be use ";
+        
+        acc.connect();
+        
+        String accNo = jTextField5.getText();
+        String msg = acc.select(accNo);
         JLabel msgLabel = new JLabel(msg);
         JFrame popup = new JFrame("Status");
         popup.add(msgLabel);
         popup.setPreferredSize(new Dimension(200, 300));
         popup.pack();
         popup.setVisible(true);
-        System.out.println(db.disconnect());
+        setVisible(false);
         
-        
+        acc.disconnect();
     }//GEN-LAST:event_jButton3MouseClicked
 
     /**
