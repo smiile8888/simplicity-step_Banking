@@ -3,7 +3,7 @@ package database;
 
 import edu.sit.cs.db.CSDbDelegate;
 
-public class ConnectDB {
+public abstract class ConnectDB {
     
     protected static CSDbDelegate db;
     
@@ -19,5 +19,13 @@ public class ConnectDB {
     public static void disconnect() {
         System.out.println(db.disconnect());
     }
+    
+    public abstract String select(String s);
+    
+    public abstract void insert();
+    
+    public abstract void update();
+    
+    public abstract void delete();
 
 }
