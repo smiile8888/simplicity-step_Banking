@@ -236,6 +236,8 @@ public class Name extends javax.swing.JFrame {
         String type = jTextField6.getText();
         
         acc.insert(firstname, surname, title, bd, age, add, pos, comp, salary, type);
+        
+        acc.disconnect();
     }//GEN-LAST:event_OKActionPerformed
 
     private void MainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MainActionPerformed
