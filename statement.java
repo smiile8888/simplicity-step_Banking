@@ -1,12 +1,14 @@
-
-import edu.sit.cs.db.CSDbDelegate;
 import java.awt.Dimension;
 import java.util.ArrayList;
 import java.util.HashMap;
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import database.AccountCustomer;
+import database.Searching;
+import database.ConnectDB;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -21,6 +23,10 @@ import javax.swing.table.DefaultTableModel;
  * @author Student Lab
  */
 public class statement extends javax.swing.JFrame {
+    
+    private ConnectDB con;
+    private Searching search = new AccountCustomer();
+    ArrayList<HashMap> data;
 
     /**
      * Creates new form statement
@@ -44,6 +50,11 @@ public class statement extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(409, 300));
@@ -65,10 +76,10 @@ public class statement extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 90, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 90, -1, -1));
 
         jPanel1.setLayout(new java.awt.BorderLayout());
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 397, 115));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 205, 397, 120));
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 86));
 
@@ -95,6 +106,23 @@ public class statement extends javax.swing.JFrame {
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 420, 70));
 
+        jLabel3.setText("or");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 20, -1));
+
+        jLabel4.setText("Firstname");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, -1, -1));
+
+        jLabel5.setText("Lastname");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, -1, -1));
+
+        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, 200, 20));
+        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 170, 200, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -103,25 +131,22 @@ public class statement extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        CSDbDelegate db = new CSDbDelegate("cs14sitkmutt.me", "3306", "CSC105_G1", "CSC105_G1", "CSC105_G1");
-        System.out.println(db.connect());
+        con.connect();
         String id = jTextField1.getText();
-        String sql = "SELECT `timest`,`action`,`Remaining` FROM `Tranfer` WHERE AccountID = "+id
-                +" union select  `timest`,`action`,`Remaining` from Withdraw WHERE AccountID = "+id
-                +" union SELECT  `timest`,`action`,`Remaining` FROM Deposit WHERE AccountID = "+id+" order by timest";
-        ArrayList<HashMap> data = db.queryRows(sql);
+        if (id.isEmpty()) {
+            String firstname = jTextField2.getText();
+            String lastname = jTextField3.getText();
+            if (firstname.isEmpty() || lastname.isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Please fill both FIRSTNAME and LASTNAME!");
+            } else {
+                data = search.searchByName(firstname, lastname);
+            }
+        } else {
+            data = search.searchByID(id);
+        }
         String[] name = {"timest","action","Remaining"};
         printResult(data, name);
-        /*
-        JTable tt = resultQueryToJTable(data, name);
-        JScrollPane sp = new JScrollPane(tt);
-        JFrame f = new JFrame("Test");
-        f.add(sp);
-        f.setPreferredSize(sp.getPreferredSize());
-        f.pack();
-        f.setVisible(true);
-        */
+        
         JTable tt = resultQueryToJTable(data, name);
         JScrollPane jScrollPane1 = new JScrollPane(tt);
         jPanel1.add(jScrollPane1);
@@ -129,13 +154,13 @@ public class statement extends javax.swing.JFrame {
         jScrollPane1.setLocation(0, 100);
         jScrollPane1.revalidate();
         setVisible(true);
-        
-        //setVisible(true);
-        
-        
         System.out.println(data.get(0).get("action"));
-        System.out.println(db.disconnect());
+        con.disconnect();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField2ActionPerformed
     
     public JTable resultQueryToJTable(ArrayList<HashMap> data, String[] colName){
         String[][] out = new String[data.size()][colName.length];
@@ -150,9 +175,9 @@ public class statement extends javax.swing.JFrame {
     }
     
     public void printResult(ArrayList<HashMap> data, String[] colName){
-        for(int i = 0 ; i < data.size();i++){
-            for(int j = 0 ; j < colName.length;j++){
-            System.out.print(data.get(i).get(colName[j])+"\t");
+        for(int i = 0 ; i < data.size(); i++){
+            for(int j = 0 ; j < colName.length; j++){
+                System.out.print(data.get(i).get(colName[j])+"\t");
             }
             System.out.println("");
         }
@@ -198,8 +223,13 @@ public class statement extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
 }
