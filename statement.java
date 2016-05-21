@@ -6,7 +6,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import database.AccountCustomer;
+import database.CustomerAccount;
 import database.Searching;
 import database.ConnectDB;
 
@@ -25,7 +25,7 @@ import database.ConnectDB;
 public class statement extends javax.swing.JFrame {
     
     private ConnectDB con;
-    private Searching search = new AccountCustomer();
+    private Searching search = new CustomerAccount();
     ArrayList<HashMap> data;
 
     /**
@@ -55,6 +55,7 @@ public class statement extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(409, 300));
@@ -123,6 +124,14 @@ public class statement extends javax.swing.JFrame {
         getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, 200, 20));
         getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 170, 200, -1));
 
+        jButton2.setText("Main");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 140, -1, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -161,6 +170,12 @@ public class statement extends javax.swing.JFrame {
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField2ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        BankMaker frame2 = new BankMaker();
+        frame2.setVisible(true); //go to CheckIn frame
+        setVisible(false);
+    }//GEN-LAST:event_jButton2ActionPerformed
     
     public JTable resultQueryToJTable(ArrayList<HashMap> data, String[] colName){
         String[][] out = new String[data.size()][colName.length];
@@ -210,17 +225,19 @@ public class statement extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
+        statement s = new statement();
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new statement().setVisible(true);
+                s.setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
