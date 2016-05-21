@@ -9,7 +9,7 @@ import javafx.scene.paint.Color;
 
 /**
  *
- * @author เมย�?
+ * @author เมย�?
  */
 public class Main extends javax.swing.JFrame {
 
@@ -83,7 +83,7 @@ public class Main extends javax.swing.JFrame {
         });
         getContentPane().add(Interest, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, -1, -1));
 
-        jButton6.setText("Statement printout");
+        jButton6.setText("Transaction printout");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton6ActionPerformed(evt);
