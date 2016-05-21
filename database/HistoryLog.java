@@ -7,6 +7,8 @@ package database;
 import database.ConnectDB;
 import static database.ConnectDB.db;
 import edu.sit.cs.db.CSDbDelegate;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  *
@@ -14,7 +16,7 @@ import edu.sit.cs.db.CSDbDelegate;
  */
 public class HistoryLog{
     
-    protected static CSDbDelegate db;
+    protected static CSDbDelegate db = new CSDbDelegate("csprog-in.sit.kmutt.ac.th", "3306", "CSC105_G1", "CSC105_G1", "CSC105_G1");
     
     private String firstname;
     private String lastname;
@@ -22,6 +24,7 @@ public class HistoryLog{
     private String amount;
     
     public HistoryLog(){
+        
     }
     
     public void setData(String f, String l, String acc, String am){
@@ -32,7 +35,7 @@ public class HistoryLog{
     }
     
     public void insert(String operation){
-        db = new CSDbDelegate("csprog-in.sit.kmutt.ac.th", "3306", "CSC105_G1", "CSC105_G1", "CSC105_G1");
+        db.connect();
         String sql = "INSERT INTO " + operation
                     + "(Firstname, Lastname, AccountID, Amount) "
                     + "VALUES('" + firstname + "','" + lastname + "','" 
