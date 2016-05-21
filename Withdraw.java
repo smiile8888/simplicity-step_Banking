@@ -19,21 +19,13 @@ import database.AccountCustomer;
  *
  * @author เมย�?
  */
-public class Withdraw extends javax.swing.JFrame {
-
-    private HistoryLog hisLog;
-    private AccountCustomer acc;
-    
-    private String firstname;
-    private String lastname;
-    private String accountID;
-    private String amount;
-    private final String operation = "Withdraw";
+public class Withdraw extends Operations {
     
     /**
      * Creates new form Withdraw
      */
     public Withdraw() {
+        super();
         initComponents();
     }
 
@@ -151,27 +143,19 @@ public class Withdraw extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField2ActionPerformed
 
     private void OKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OKActionPerformed
-        // Connect to database
-        //hisLog.connect();
-
-        // Insert Transaction
         firstname = jTextField1.getText();
         lastname = jTextField2.getText();
         accountID = jTextField5.getText();
         amount = jTextField4.getText();
         
         hisLog.setData(firstname, lastname, accountID, amount);
-        hisLog.insert(operation);
-        
-        //hisLog.disconnect();
+        hisLog.insert(WD);
     }//GEN-LAST:event_OKActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-
         Main frame2 = new Main();
         frame2.setVisible(true); //go to CheckIn frame
         setVisible(false);
-
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -182,10 +166,7 @@ public class Withdraw extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        //acc.connect();
-        
-        String accNo = jTextField5.getText();
-        String msg = acc.select(accNo);
+        String msg = acc.select(accountID);
         JLabel msgLabel = new JLabel(msg);
         JFrame popup = new JFrame("Status");
         popup.add(msgLabel);
@@ -193,8 +174,6 @@ public class Withdraw extends javax.swing.JFrame {
         popup.pack();
         popup.setVisible(true);
         setVisible(false);
-        
-        //acc.disconnect();        
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void OKMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OKMouseClicked
