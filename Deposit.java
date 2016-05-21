@@ -17,21 +17,15 @@ import database.AccountCustomer;
  *
  * @author เมย�?
  */
-public class Deposit extends javax.swing.JFrame {
+public class Deposit extends Operations {
     
-    private HistoryLog hisLog;
-    private AccountCustomer acc;
-    
-    private String firstname;
-    private String lastname;
-    private String accountID;
-    private String amount;
     private final String operation = "Deposit";
 
     /**
      * Creates new form Deposit
      */
     public Deposit() {
+        super();
         initComponents();
     }
 
@@ -179,9 +173,7 @@ public class Deposit extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
 
         //acc.connect();
-        
-        String accNo = jTextField6.getText();
-        String msg = acc.select(accNo);
+        String msg = acc.select(accountID);
         JLabel msgLabel = new JLabel(msg);
         JFrame popup = new JFrame("Status");
         popup.add(msgLabel);
