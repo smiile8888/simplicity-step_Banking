@@ -11,7 +11,7 @@
 public class showmessage extends javax.swing.JFrame {
 
     /**
-     * Creates new form showmessage
+     * Creates new form show message
      */
     public showmessage() {
         initComponents();
