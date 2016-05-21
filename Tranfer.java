@@ -138,7 +138,7 @@ public class Tranfer extends Operations {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        Main frame2 = new Main();
+        BankMaker frame2 = new BankMaker();
         frame2.setVisible(true); //go to CheckIn frame
         setVisible(false);
 
