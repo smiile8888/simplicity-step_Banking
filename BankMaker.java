@@ -102,7 +102,7 @@ public class BankMaker extends javax.swing.JFrame {
     }// </editor-fold>                        
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        Name frame2 = new Name();
+        CreateAccount frame2 = new CreateAccount();
         frame2.setVisible(true); //go to CheckIn frame
         setVisible(false);
     }                                        
@@ -133,6 +133,7 @@ public class BankMaker extends javax.swing.JFrame {
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) { 
         statement frame2 = new statement();
+        frame2.setSize(420, 325);
         frame2.setVisible(true); //go to CheckIn frame
         setVisible(false);
     }                                        
@@ -144,7 +145,7 @@ public class BankMaker extends javax.swing.JFrame {
         /* Set the Nimbus look and feel */
         BankMaker frame1 = new BankMaker();
         frame1.setBackground(java.awt.Color.yellow);
-        frame1.setSize(400, 400);
+        frame1.setSize(420, 400);
        
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
