@@ -17,21 +17,13 @@ import database.AccountCustomer;
  *
  * @author เมย�?
  */
-public class Tranfer extends javax.swing.JFrame {
-
-    private HistoryLog hisLog;
-    private AccountCustomer acc;
-    
-    private String firstname;
-    private String lastname;
-    private String accountID;
-    private String amount;
-    private final String operation = "Transfer";
+public class Tranfer extends Operations {
 
     /**
      * Creates new form Transfer
      */
     public Tranfer() {
+        super();
         initComponents();
     }
 
@@ -139,17 +131,13 @@ public class Tranfer extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // Connect to database
-        //hisLog.connect();
-
-        // Insert Transaction
         firstname = jTextField1.getText();
         lastname = jTextField2.getText();
         accountID = jTextField5.getText();
         amount = jTextField7.getText();
         
         hisLog.setData(firstname, lastname, accountID, amount);
-        hisLog.insert(operation);
+        hisLog.insert(TF);
         
         //hisLog.disconnect();
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -171,9 +159,7 @@ public class Tranfer extends javax.swing.JFrame {
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
         
         //acc.connect();
-        
-        String accNo = jTextField5.getText();
-        String msg = acc.select(accNo);
+        String msg = acc.select(accountID);
         JLabel msgLabel = new JLabel(msg);
         JFrame popup = new JFrame("Status");
         popup.add(msgLabel);
