@@ -5,11 +5,14 @@
  */
 package database;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 /**
  *
  * @author SMiiLE
  */
 public interface Searching {
-    public String[] searchByID(String accNo);
-    public String[] searchByName(String f, String l);
+    public ArrayList<HashMap> searchByID(String accNo);
+    public ArrayList<HashMap> searchByName(String f, String l);
 }
