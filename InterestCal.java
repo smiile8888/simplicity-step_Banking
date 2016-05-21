@@ -13,7 +13,7 @@ import javax.swing.JLabel;
 
 /**
  *
- * @author เมย�?
+ * @author เมย�?
  */
 public class InterestCal extends javax.swing.JFrame {
 
@@ -104,7 +104,7 @@ public class InterestCal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        Main frame2 = new Main();
+        BankMaker frame2 = new BankMaker();
         frame2.setVisible(true); //go to CheckIn frame
         setVisible(false);
 
