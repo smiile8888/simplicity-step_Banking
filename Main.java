@@ -9,5 +9,7 @@
  * @author SMiiLE
  */
 public class Main {
-    BankMaker bank = new BankMaker();
+    public static void main(String[] args) {
+        BankMaker bank = new BankMaker();
+    }
 }
