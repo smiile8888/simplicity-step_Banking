@@ -8,8 +8,10 @@
  *
  * @author SMiiLE
  */
-public class Main {
+public class Main extends javax.swing.JFrame{
     public static void main(String[] args) {
         BankMaker bank = new BankMaker();
+        bank.setSize(400, 400);
+        bank.setVisible(true);
     }
 }
