@@ -9,13 +9,13 @@
  * @author SMiiLE
  */
 
-import database.AccountCustomer;
+import database.CustomerAccount;
 import database.HistoryLog;
 
 public class Operations extends javax.swing.JFrame{
     
     protected HistoryLog hisLog;
-    protected AccountCustomer acc;
+    protected CustomerAccount acc;
     
     public String firstname;
     public String lastname;
@@ -28,6 +28,6 @@ public class Operations extends javax.swing.JFrame{
         
     public Operations() {
         hisLog = new HistoryLog();
-        acc = new AccountCustomer();
+        acc = new CustomerAccount();
     }
 }
