@@ -18,8 +18,6 @@ import database.AccountCustomer;
  * @author เมย�?
  */
 public class Deposit extends Operations {
-    
-    private final String operation = "Deposit";
 
     /**
      * Creates new form Deposit
@@ -140,19 +138,13 @@ public class Deposit extends Operations {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // Connect to database
-        //hisLog.connect();
-
-        // Insert Transaction
         firstname = jTextField1.getText();
         lastname = jTextField2.getText();
         accountID = jTextField6.getText();
         amount = jTextField5.getText();
         
         hisLog.setData(firstname, lastname, accountID, amount);
-        hisLog.insert(operation);
-        
-        //hisLog.disconnect();
+        hisLog.insert(DP);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -171,8 +163,6 @@ public class Deposit extends Operations {
  
     
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-
-        //acc.connect();
         String msg = acc.select(accountID);
         JLabel msgLabel = new JLabel(msg);
         JFrame popup = new JFrame("Status");
@@ -181,8 +171,6 @@ public class Deposit extends Operations {
         popup.pack();
         popup.setVisible(true);
         setVisible(false);
-        
-        //acc.disconnect();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
