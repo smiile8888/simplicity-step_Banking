@@ -241,7 +241,7 @@ public class Name extends javax.swing.JFrame {
     }//GEN-LAST:event_OKActionPerformed
 
     private void MainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MainActionPerformed
-        Main frame2 = new Main();
+        BankMaker frame2 = new BankMaker();
         frame2.setVisible(true); //go to CheckIn frame
         setVisible(false);
 
