@@ -141,7 +141,7 @@ public class Name extends javax.swing.JFrame {
                 OKActionPerformed(evt);
             }
         });
-        getContentPane().add(OK, new org.netbeans.lib.awtextra.AbsoluteConstraints(181, 508, -1, -1));
+        getContentPane().add(OK, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 510, -1, -1));
 
         jTextField23.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -156,7 +156,7 @@ public class Name extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(238, 508, -1, -1));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 510, -1, -1));
 
         Main.setText("Main");
         Main.addActionListener(new java.awt.event.ActionListener() {
@@ -164,7 +164,7 @@ public class Name extends javax.swing.JFrame {
                 MainActionPerformed(evt);
             }
         });
-        getContentPane().add(Main, new org.netbeans.lib.awtextra.AbsoluteConstraints(301, 508, -1, -1));
+        getContentPane().add(Main, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 510, -1, -1));
         getContentPane().add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(136, 470, 232, -1));
 
         jLabel5.setText("saving account, fixes deposit, current account");
@@ -221,7 +221,7 @@ public class Name extends javax.swing.JFrame {
 
     private void OKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OKActionPerformed
         //Connect to database
-        acc.connect();
+        //acc.connect();
 
         // Insert new account 
         String firstname = jTextField1.getText();
@@ -237,7 +237,7 @@ public class Name extends javax.swing.JFrame {
         
         acc.insert(firstname, surname, title, bd, age, add, pos, comp, salary, type);
         
-        acc.disconnect();
+        //acc.disconnect();
     }//GEN-LAST:event_OKActionPerformed
 
     private void MainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MainActionPerformed
