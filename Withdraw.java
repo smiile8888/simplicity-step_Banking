@@ -1,13 +1,6 @@
 import java.awt.Dimension;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import java.util.HashMap;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-
-import database.HistoryLog;
-import database.AccountCustomer;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
