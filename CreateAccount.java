@@ -1,4 +1,3 @@
-
 import database.CustomerAccount;
 
 /*
@@ -19,6 +18,7 @@ public class CreateAccount extends javax.swing.JFrame {
      * Creates new form Name
      */
     public CreateAccount() {
+        acc = new CustomerAccount();
         initComponents();
         dispose();
     }
@@ -70,6 +70,12 @@ public class CreateAccount extends javax.swing.JFrame {
 
         jLabel1.setText("Firstname");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 83, 76, 27));
+
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(136, 86, 120, -1));
 
         jLabel2.setText("Surname");
@@ -261,6 +267,10 @@ public class CreateAccount extends javax.swing.JFrame {
         jTextField6.setText("");
         jTextField8.setText("");
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
     /**
      * @param args the command line arguments
