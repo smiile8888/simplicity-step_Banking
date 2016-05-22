@@ -1,3 +1,5 @@
+import database.CustomerAccount;
+import database.HistoryLog;
 import java.awt.Dimension;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -19,6 +21,8 @@ public class Deposit extends Operations {
      */
     public Deposit() {
         super();
+        acc = new CustomerAccount();
+        hisLog = new HistoryLog();
         initComponents();
     }
 
@@ -158,14 +162,17 @@ public class Deposit extends Operations {
  
     
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        String msg = acc.select(accountID);
+        accountID = jTextField6.getText();
+        int accID = Integer.parseInt(accountID); 
+        System.out.println(accID);
+        String msg = acc.selectDep(accID);
         JLabel msgLabel = new JLabel(msg);
         JFrame popup = new JFrame("Status");
         popup.add(msgLabel);
         popup.setPreferredSize(new Dimension(200, 300));
         popup.pack();
         popup.setVisible(true);
-        setVisible(false);
+        //setVisible(false);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
