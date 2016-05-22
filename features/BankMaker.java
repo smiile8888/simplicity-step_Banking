@@ -1,3 +1,5 @@
+package features;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -8,6 +10,11 @@
  *
  * @author SMiiLE
  */
+import features.operations.Deposit;
+import features.operations.Tranfer;
+import features.operations.Withdraw;
+import features.CreateAccount;
+import features.statement;
 import javafx.scene.paint.Color;
 
 public class BankMaker extends javax.swing.JFrame {

@@ -1,3 +1,5 @@
+package features;
+
 import java.awt.Dimension;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -58,7 +60,6 @@ public class statement extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(409, 300));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText(" Account Number ");
