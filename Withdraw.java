@@ -159,14 +159,16 @@ public class Withdraw extends Operations {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        String msg = acc.select(accountID);
+        accountID = jTextField5.getText();
+        int accID = Integer.parseInt(accountID);
+        String msg = acc.selectWithdraw(accID);
         JLabel msgLabel = new JLabel(msg);
         JFrame popup = new JFrame("Status");
         popup.add(msgLabel);
         popup.setPreferredSize(new Dimension(200, 300));
         popup.pack();
         popup.setVisible(true);
-        setVisible(false);
+        //setVisible(false);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void OKMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OKMouseClicked
