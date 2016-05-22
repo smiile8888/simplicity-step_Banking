@@ -152,16 +152,16 @@ public class Tranfer extends Operations {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
-        
-        //acc.connect();
-        String msg = acc.select(accountID);
+        accountID = jTextField5.getText();
+        int accID = Integer.parseInt(accountID);
+        String msg = acc.selectTransfer(accID);
         JLabel msgLabel = new JLabel(msg);
         JFrame popup = new JFrame("Status");
         popup.add(msgLabel);
         popup.setPreferredSize(new Dimension(200, 300));
         popup.pack();
         popup.setVisible(true);
-        setVisible(false);
+        //setVisible(false);
         
         //acc.disconnect();
     }//GEN-LAST:event_jButton3MouseClicked
