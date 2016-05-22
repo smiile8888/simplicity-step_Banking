@@ -21,8 +21,6 @@ public class Deposit extends Operations {
      */
     public Deposit() {
         super();
-        acc = new CustomerAccount();
-        hisLog = new HistoryLog();
         initComponents();
     }
 
