@@ -23,7 +23,52 @@ public class CustomerAccount implements Searching{
 
     public String select(String accNo){
         db.connect();
-        String sql = "SELECT * FROM Account_customer WHERE AccountNumber = '" + accNo + "'";
+        String sql = "SELECT * FROM Account_customer WHERE AccountNumber = " + accNo + ";";
+        ArrayList<HashMap> ch = db.queryRows(sql);
+        String msg = "";
+        if(ch.isEmpty())
+            msg += " Don't have this account ID ";
+        else
+            msg += " Have this account ID , this Account ID can be use ";
+        
+        db.disconnect();
+        return msg;
+    }
+    
+    public String selectDep(int accNo){
+        db.connect();
+        String sql = "SELECT * FROM `Deposit` WHERE AccountID = '" + accNo + "';";
+        System.out.println(sql);
+        ArrayList<HashMap> ch = db.queryRows(sql);
+        
+        String msg = "";
+        System.out.println(ch.isEmpty());
+        if(ch.isEmpty())
+            msg += " Don't have this account ID ";
+        else
+            msg += " Have this account ID , this Account ID can be use ";
+        
+        db.disconnect();
+        return msg;
+    }
+    
+    public String selectWithdraw(int accNo){
+        db.connect();
+        String sql = "SELECT * FROM Withdraw WHERE AccountID = " + accNo + ";";
+        ArrayList<HashMap> ch = db.queryRows(sql);
+        String msg = "";
+        if(ch.isEmpty())
+            msg += " Don't have this account ID ";
+        else
+            msg += " Have this account ID , this Account ID can be use ";
+        
+        db.disconnect();
+        return msg;
+    }
+    
+    public String selectTransfer(int accNo){
+        db.connect();
+        String sql = "SELECT * FROM Tranfer WHERE AccountID = " + accNo + ";";
         ArrayList<HashMap> ch = db.queryRows(sql);
         String msg = "";
         if(ch.isEmpty())
@@ -38,7 +83,7 @@ public class CustomerAccount implements Searching{
     public void insert(String firstname, String surname, String title, String BD, String age, 
                        String address, String position, String company, String salary, String type){
         db.connect();
-        String sql = "INSERT INTO Account_customer "
+        String sql = "INSERT INTO 'Account_customer' "
                     + "(Firstname, Surname, Title, Birthdate, Age, Address, Position, Company, Salary, Type) "
                     + "VALUES('" + firstname + "','" + surname + "','" + title + "','" + BD + "','" + age + "','" 
                     + address + "','" + position + "','" + company + "','" + salary + "','" + type + "');";
