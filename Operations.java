@@ -14,8 +14,8 @@ import database.HistoryLog;
 
 public class Operations extends javax.swing.JFrame{
     
-    protected HistoryLog hisLog;
-    protected CustomerAccount acc;
+    public HistoryLog hisLog;
+    public CustomerAccount acc;
     
     public String firstname;
     public String lastname;
@@ -27,7 +27,7 @@ public class Operations extends javax.swing.JFrame{
     public final String WD = "Withdraw";
         
     public Operations() {
-        hisLog = new HistoryLog();
         acc = new CustomerAccount();
+        hisLog = new HistoryLog();
     }
 }
